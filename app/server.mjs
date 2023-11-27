@@ -83,9 +83,9 @@ app.use(
 // app.use(express.static(buildPath));
 
 // // Catch-all route for SPA
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(buildPath, 'index.html'));
-// });
+app.get('*', (req, res) => {
+    res.sendFile(path.join(buildPath, 'index.html'));
+});
 
 const PORT = process.env.PORT || 5002;
 
