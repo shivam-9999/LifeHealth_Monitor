@@ -36,15 +36,15 @@ import MotivationalVideosPage from './pages/motivational_videos';
 const routes = [
     {
         name: 'Root',
-        path: '/',
-        element: <Navigate to="/dashboard" />,
+        path: '/api/',
+        element: <Navigate to="/api/dashboard" />,
         icon: faBook,
         hiddenNurse: true,
         hiddenPatient: true
     },
     { 
         name: 'Dashboard',
-        path: '/dashboard',
+        path: '/api/dashboard',
         element: (
             <RouteWithSidebar>
                 <ProtectedRoute>
@@ -58,7 +58,7 @@ const routes = [
     },
     { 
         name: 'Emergency Alerts',
-        path: '/emergencies/:patientId',
+        path: '/api/emergencies/:patientId',
         element: (
             <RouteWithSidebar>
                 <PatientOnlyRoute>
@@ -72,7 +72,7 @@ const routes = [
     },
     { 
         name: 'Emergency Alerts',
-        path: '/emergencies',
+        path: '/api/emergencies',
         element: (
             <RouteWithSidebar>
                 <ProtectedRoute>
@@ -86,7 +86,7 @@ const routes = [
     },
     {
         name: 'Patients',
-        path: '/patients',
+        path: '/api/patients',
         element: (
             <RouteWithSidebar>
                 <NurseOnlyRoute>
@@ -100,7 +100,7 @@ const routes = [
     },
     {
         name: 'Vitals',
-        path: '/vitals/:patientId',
+        path: '/api/vitals/:patientId',
         element: (
             <RouteWithSidebar>
                 <ProtectedRoute>
@@ -114,7 +114,7 @@ const routes = [
     },
     {
         name: 'Vitals',
-        path: '/vitals',
+        path: '/api/vitals',
         element: (
             <RouteWithSidebar>
                 <PatientOnlyRoute>
@@ -128,7 +128,7 @@ const routes = [
     },
     {
         name: 'Symptoms',
-        path: '/symptoms/:patientId',
+        path: '/api/symptoms/:patientId',
         element: (
             <RouteWithSidebar>
                 <ProtectedRoute>
@@ -142,7 +142,7 @@ const routes = [
     },
     {
         name: 'Symptoms',
-        path: '/symptoms',
+        path: '/api/symptoms',
         element: (
             <RouteWithSidebar>
                 <PatientOnlyRoute>
@@ -156,7 +156,7 @@ const routes = [
     },
     {
         name: 'Nurses',
-        path: '/nurses',
+        path: '/api/nurses',
         element: (
             <RouteWithSidebar>
                 <PatientOnlyRoute>
@@ -170,7 +170,7 @@ const routes = [
     },
     {
         name: 'Tips',
-        path: '/tips',
+        path: '/api/tips',
         element: (
             <RouteWithSidebar>
                 <ProtectedRoute>
@@ -184,7 +184,7 @@ const routes = [
     },
     {
         name: 'Motivational Videos',
-        path: '/motivational_videos',
+        path: '/api/motivational_videos',
         element: (
             <RouteWithSidebar>
                 <ProtectedRoute>
@@ -198,7 +198,7 @@ const routes = [
     },
     { 
         name: 'Games',
-        path: '/games',
+        path: '/api/games',
         element: (
             <RouteWithSidebar>
                 <ProtectedRoute>
@@ -212,7 +212,7 @@ const routes = [
     },
     {
         name: 'Login',
-        path: '/login',
+        path: '/api/login',
         element: (
             <RouteWithLoader>
                 <UnauthenticatedRoute>
@@ -226,7 +226,7 @@ const routes = [
     },
     {
         name: 'Register',
-        path: '/register',
+        path: '/api/register',
         element: (
             <RouteWithLoader>
                 <UnauthenticatedRoute>
