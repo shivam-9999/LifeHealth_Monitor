@@ -1,10 +1,14 @@
 import { GraphQLObjectType, GraphQLList, GraphQLNonNull, GraphQLString } from "graphql";
 import NurseModel from "../models/nurseModel.js";
-import config from "../config/config.js";
-const jwtExpirySeconds = 300;
-const jwtKey = config.secretKey;
+// import config from "../config/config.js";
+
+import * as dotenv from 'dotenv';
+dotenv.config();
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
+
+const jwtExpirySeconds = 300;
+const jwtKey = process.env.REALSECRET;
 
 const nurseType = new GraphQLObjectType({
     name: "nurse",
