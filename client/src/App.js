@@ -10,7 +10,7 @@ import routes from './routes';
 function App() {
 
   return (
-    <BrowserRouter basename="/client">
+    <BrowserRouter>
       <Routes>
         { routes.map((route) => (
           <Route
