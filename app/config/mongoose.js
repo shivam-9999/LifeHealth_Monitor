@@ -9,7 +9,7 @@ import config from './config.js';
 const connectToDatabase = async () => {
   try {
     // Use Mongoose to connect to MongoDB
-    const db = await mongoose.connect(config.db, {
+    const db = await mongoose.connect(process.env.URI, {
       useUnifiedTopology: true,
       useNewUrlParser: true,
       useCreateIndex: true,
