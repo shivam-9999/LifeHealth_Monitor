@@ -10,7 +10,7 @@ import routes from './routes';
 function App() {
 
   return (
-    <BrowserRouter basename="/api">
+    <BrowserRouter>
       <Routes>
         { routes.map((route) => (
           <Route

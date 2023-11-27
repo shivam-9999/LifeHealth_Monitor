@@ -9,6 +9,10 @@ import NewEmergencyAlert from '../components/modals/NewEmergencyAlert';
 import { GET_EMERGENCIES_BY_PATIENT, GET_ALL_EMERGENCIES } from '../graphql/emergency';
 import apolloClient from '../utils/apollo';
 
+import { GET_ALL_EMERGENCIES } from '../graphql/emergency';
+import { useQuery } from '@apollo/client';
+
+
 
 /*
 Allow the patient to create and send an
@@ -17,6 +21,7 @@ emergency alert to first responders
 */
 
 const EmergencyPage = () => {
+
   const { loggedInUser, role } = useAuth();
 
   const { patientId } = useParams();
@@ -60,7 +65,7 @@ const EmergencyPage = () => {
       { role === 'patient' && <NewEmergencyAlert /> }
       
       <EmergencyTable
-        emergencies={data}
+        emergencies={data?.emergencies ?? []}
       />
     </>
   )
