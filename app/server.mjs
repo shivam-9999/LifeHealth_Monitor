@@ -8,6 +8,8 @@ import morgan from 'morgan';
 import compress from 'compression';
 import cors from 'cors';
 import schema from "./graphql/index.mjs";
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 
 // Import the configuration file
@@ -19,6 +21,8 @@ import { graphqlHTTP } from 'express-graphql';
 // import schema from './graphql.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
+
+
 
 // Create a new Express application instance
 const app = express();
@@ -54,7 +58,7 @@ app.use(methodOverride('_method'));
 
 // Configure the 'session' middleware
 app.use(session({
-    secret: config.secretKey,
+    secret:process.env.REALSECRET,
     saveUninitialized: true,
     resave: true,
 }));

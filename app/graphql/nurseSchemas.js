@@ -9,6 +9,7 @@ import bcrypt from "bcrypt";
 
 const jwtExpirySeconds = 300;
 const jwtKey = process.env.REALSECRET;
+console.log(jwtKey);
 
 const nurseType = new GraphQLObjectType({
     name: "nurse",
