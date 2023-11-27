@@ -7,7 +7,7 @@ dotenv.config();
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
-const jwtExpirySeconds = 300;
+
 const jwtKey = process.env.REALSECRET;
 
 
@@ -187,7 +187,7 @@ export const nurseMutation ={
             }
             const token = jwt.sign({ _id: nurse._id }, jwtKey, {
                 algorithm: "HS256",
-                expiresIn: jwtExpirySeconds,
+
             });
 
             return {
