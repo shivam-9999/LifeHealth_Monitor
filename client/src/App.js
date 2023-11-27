@@ -20,10 +20,10 @@ function App() {
           />
         )) }
 
-        {/* <Route
+        <Route
           path="*"
           element={<div>404</div>}
-        /> */}
+        />
       </Routes>
     </BrowserRouter>
   );
