@@ -77,10 +77,11 @@ app.use(
 );
 
 // Serve the build folder
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
-// const buildPath = path.join(__dirname, './build');
-// app.use(express.static(buildPath));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const buildPath = path.join(__dirname, './build');
+app.use(express.static(buildPath));
+
 
 // // Catch-all route for SPA
 app.get('*', (req, res) => {
