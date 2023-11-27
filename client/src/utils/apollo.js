@@ -2,7 +2,7 @@ import { ApolloClient, InMemoryCache } from "@apollo/client";
 
 
 const apolloClient = new ApolloClient({
-  uri: "http://localhost:5002/graphql",
+  uri: "https://lifehealth-monitor.onrender.com/graphql",
   cache: new InMemoryCache()
 })
 
