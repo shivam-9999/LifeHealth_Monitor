@@ -9,8 +9,6 @@ import NewEmergencyAlert from '../components/modals/NewEmergencyAlert';
 import { GET_EMERGENCIES_BY_PATIENT, GET_ALL_EMERGENCIES } from '../graphql/emergency';
 import apolloClient from '../utils/apollo';
 
-import { GET_ALL_EMERGENCIES } from '../graphql/emergency';
-import { useQuery } from '@apollo/client';
 
 
 
