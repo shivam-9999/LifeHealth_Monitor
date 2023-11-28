@@ -76,7 +76,7 @@ app.use(
     graphqlHTTP({
         schema: schema,
         rootValue: global,
-        graphiql:"https://lifehealth-monitor.onrender.com/graphql",
+        graphiql:"https://lifehealth-monitor.onrender.com/",
     })
 );
 // process.env.NODE_ENV === "development"
