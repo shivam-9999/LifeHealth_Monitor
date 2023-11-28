@@ -46,10 +46,10 @@ const SymptomsTable = ({ symptoms }) => {
   }
 
   const TableRow = (props) => {
-    const { _id, timestamp, fever, cough, breathing_difficulty, headache, sore_throat, key } = props;
+    const { _id, timestamp, fever, cough, breathing_difficulty, headache, sore_throat, keyidx } = props;
 
     return (
-      <tr key={key}>
+      <tr key={keyidx}>
         <td>
           <span className="fw-normal">
             {_id}
@@ -140,7 +140,7 @@ const SymptomsTable = ({ symptoms }) => {
             </tr>
           </thead>
           <tbody>
-            {paginatedData.map(t => <TableRow key={`symptom-${t._id}`} {...t} />)}
+            {paginatedData.map(t => <TableRow keyidx={`symptom-${t._id}`} {...t} />)}
           </tbody>
         </Table>
         <Card.Footer className="px-3 border-0 d-lg-flex align-items-center justify-content-between">

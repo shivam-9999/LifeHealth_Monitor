@@ -20,6 +20,7 @@ import EditEmergencyAlert from "../modals/EditEmergencyAlert";
 
 
 const EmergenciesTable = ({ emergencies }) => {
+  console.log("emergencies",emergencies);
   const totalEmergencies = emergencies.length;
 
   const navigate = useNavigate();
@@ -36,7 +37,7 @@ const EmergenciesTable = ({ emergencies }) => {
   const paginatedData = React.useMemo(() => {
     return emergencies.slice(entriesPerPage * currentPage, entriesPerPage * (currentPage + 1));
   }, [emergencies, entriesPerPage, currentPage]);
-  console.log(paginatedData);
+
   const onPreviousClick = () => {
     setCurrentPage((curr) => curr > 0 ? curr - 1 : curr)
   }
@@ -45,11 +46,13 @@ const EmergenciesTable = ({ emergencies }) => {
     setCurrentPage((curr) => curr + 1 < numberOfPages ? curr + 1 : curr)
   }
 
+  
   const TableRow = (props) => {
-    const { _id, timestamp, patient, concern, key } = props;
+    const { _id, timestamp, patient, concern, keyIdx } = props;
+  
 
     return (
-      <tr key={key}>
+      <tr key={keyIdx}>
         <td>
           <span className="fw-normal">
             {timestamp}
@@ -121,7 +124,7 @@ const EmergenciesTable = ({ emergencies }) => {
             </tr>
           </thead>
           <tbody>
-            {paginatedData.map(t => <TableRow key={`emergency-${t._id}`} {...t} />)}
+            {paginatedData.map(t => <TableRow keyIdx={`emergency-${t._id}`} {...t} />)}
           </tbody>
         </Table>
         <Card.Footer className="px-3 border-0 d-lg-flex align-items-center justify-content-between">

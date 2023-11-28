@@ -37,10 +37,10 @@ const PatientsTable = ({ patients }) => {
   }
 
   const TableRow = (props) => {
-    const { _id, firstName, lastName, address, phoneNumber, email, key } = props;
+    const { _id, firstName, lastName, address, phoneNumber, email, keyidx } = props;
 
     return (
-      <tr key={key}>
+      <tr key={keyidx}>
         <td>
           <span className="fw-normal">
             {_id}
@@ -97,7 +97,7 @@ const PatientsTable = ({ patients }) => {
       <Card.Body className="pt-0">
         <Table hover className="user-table align-items-center">
           <thead>
-            <tr>
+            <tr >
               <th className="border-bottom">#</th>
               <th className="border-bottom">First Name</th>
               <th className="border-bottom">Last Name</th>
@@ -108,7 +108,7 @@ const PatientsTable = ({ patients }) => {
             </tr>
           </thead>
           <tbody>
-            {paginatedData.map(t => <TableRow key={`patient-${t._id}`} {...t} />)}
+            {paginatedData.map(t => <TableRow keyidx={`patient-${t._id}`} {...t} />)}
           </tbody>
         </Table>
         <Card.Footer className="px-3 border-0 d-lg-flex align-items-center justify-content-between">

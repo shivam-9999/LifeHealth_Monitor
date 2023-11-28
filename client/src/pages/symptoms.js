@@ -29,6 +29,10 @@ const SymptomsPage = () => {
     refetch();
   }, [refetch, patientId]);
 
+    React.useEffect(() => {
+      console.log(data);
+  }, [data]);
+
   if (!patientId) {
     if (role === 'patient') {
       return <Navigate to={`/symptoms/${loggedInUser._id}`} />;

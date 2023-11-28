@@ -10,14 +10,6 @@ import { GET_EMERGENCIES_BY_PATIENT, GET_ALL_EMERGENCIES } from '../graphql/emer
 import apolloClient from '../utils/apollo';
 
 
-
-
-/*
-Allow the patient to create and send an
-emergency alert to first responders
-(by storing this in a separate collection)
-*/
-
 const EmergencyPage = () => {
 
   const { loggedInUser, role } = useAuth();
@@ -40,10 +32,10 @@ const EmergencyPage = () => {
       apolloClient.query({
         query: GET_ALL_EMERGENCIES,
       }).then((result) => {
-        setData(result.data.emergencies);
+        setData(result.data.emergencies)
       });
     }
-  }, [patientId]);
+  }, [patientId,data]);
 
   if (!patientId) {
     if (role === 'patient') {
@@ -63,7 +55,7 @@ const EmergencyPage = () => {
       { role === 'patient' && <NewEmergencyAlert /> }
       
       <EmergencyTable
-        emergencies={data?.emergencies ?? []}
+        emergencies={data ?? []}
       />
     </>
   )

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 
 import { useAuth } from '../hooks/useAuth';
 import { useParams, Navigate } from 'react-router-dom';
@@ -31,6 +31,10 @@ const VitalsPage = () => {
   React.useEffect(() => {
     refetch();
   }, [refetch, patientId]);
+
+  useEffect(()=>{
+    console.log(data);
+  })
 
   if (!patientId) {
     if (role === 'patient') {

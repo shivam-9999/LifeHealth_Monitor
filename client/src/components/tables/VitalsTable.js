@@ -54,11 +54,11 @@ const VitalsTable = ({ vitals }) => {
       body_temperature,
       respiratory_rate,
       weight,
-      key
+      keyidx
     } = props;
 
     return (
-      <tr key={key}>
+      <tr key={keyidx}>
         <td>
           <span className="fw-normal">
             {_id}
@@ -157,7 +157,7 @@ const VitalsTable = ({ vitals }) => {
             </tr>
           </thead>
           <tbody>
-            {paginatedData.map(t => <TableRow key={`vital-${t._id}`} {...t} />)}
+            {paginatedData.map(t => <TableRow keyidx={`vital-${t._id}`} {...t} />)}
           </tbody>
         </Table>
         <Card.Footer className="px-3 border-0 d-lg-flex align-items-center justify-content-between">

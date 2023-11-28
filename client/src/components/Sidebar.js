@@ -29,13 +29,13 @@ const Sidebar = (props = {}) => {
   const onCollapse = () => setShow(!show);
 
   const NavItem = (props) => {
-    const { title, link, external, target, icon, image, badgeText, badgeBg = "secondary", badgeColor = "primary" } = props;
+    const { title, link, external, target, icon, image, badgeText, badgeBg = "secondary", badgeColor = "primary", keyidx } = props;
     const classNames = badgeText ? "d-flex justify-content-start align-items-center justify-content-between" : "";
     const navItemClassName = pathname.includes(link) ? "active" : "";
     const linkProps = external ? { href: link } : { as: Link, to: link };
 
     return (
-      <Nav.Item className={navItemClassName} onClick={() => setShow(false)}>
+      <Nav.Item key={keyidx} className={navItemClassName} onClick={() => setShow(false)}>
         <Nav.Link {...linkProps} target={target} className={classNames}>
           <span>
             {icon ? <span className="sidebar-icon"><FontAwesomeIcon icon={icon} /> </span> : null}
@@ -86,7 +86,7 @@ const Sidebar = (props = {}) => {
                 if (route.hiddenPatient && role === "patient") return null;
 
                 return (
-                  <NavItem key={route.path} title={route.name} link={route.path} icon={route.icon} />
+                  <NavItem keyidx={route.path} title={route.name} link={route.path} icon={route.icon} />
                 )
               })}
             </Nav>
