@@ -37,8 +37,8 @@
   },
   "type": "module",
   "scripts": {
-    "start": "node server.mjs",
-    "dev": "node server.mjs",
+    "start": "NODE_ENV=production node server.mjs",
+    "dev": "NODE_ENV=development nodemon server.mjs",
     "build": "npm i"
   }
 }

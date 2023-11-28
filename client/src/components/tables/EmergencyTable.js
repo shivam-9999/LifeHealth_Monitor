@@ -36,7 +36,7 @@ const EmergenciesTable = ({ emergencies }) => {
   const paginatedData = React.useMemo(() => {
     return emergencies.slice(entriesPerPage * currentPage, entriesPerPage * (currentPage + 1));
   }, [emergencies, entriesPerPage, currentPage]);
-
+  console.log(paginatedData);
   const onPreviousClick = () => {
     setCurrentPage((curr) => curr > 0 ? curr - 1 : curr)
   }

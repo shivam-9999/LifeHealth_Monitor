@@ -11,18 +11,12 @@ import schema from "./graphql/index.mjs";
 import * as dotenv from 'dotenv';
 dotenv.config();
 
-
-// Import the configuration file
-import config from './config/config.js';
-
 // Import other dependencies using import syntax
 import connectToDatabase from './config/mongoose.js';
 import { graphqlHTTP } from 'express-graphql';
 // import schema from './graphql.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
-
-
 
 // Create a new Express application instance
 const app = express();
@@ -46,10 +40,20 @@ app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next();
 });
-app.use(cors( {origin: 'https://lifehealth-monitor-h8pk.onrender.com',
+// production cors
+if (process.env.NODE_ENV === "production") {
+    app.use(cors( {origin: 'https://lifehealth-monitor-h8pk.onrender.com/',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 204}));
+}
+//development cors
+if (process.env.NODE_ENV === "development") {
+    app.use(cors( {origin: '*',
+        methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+        credentials: true,
+        optionsSuccessStatus: 204}));
+}
 
 // Use method-override for handling PUT or DELETE methods
 app.use(methodOverride());
@@ -72,10 +76,10 @@ app.use(
     graphqlHTTP({
         schema: schema,
         rootValue: global,
-        graphiql: true,
+        graphiql:"https://lifehealth-monitor.onrender.com/graphql",
     })
 );
-
+// process.env.NODE_ENV === "development"
 // Serve the build folder
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

@@ -79,16 +79,6 @@ const symptomMutationType = new GraphQLObjectType({
 });
 
 export const symptomQuery = {
-  symptoms: {
-    type: new GraphQLList(symptomType),
-    resolve: function () {
-      const symptoms = SymptomModel.find().populate("patient").exec();
-      if (!symptoms) {
-        throw new Error("Symptoms not found");
-      }
-      return symptoms;
-    },
-  },
 
   symptomsByPatient: {
     type: new GraphQLList(symptomType),
@@ -115,8 +105,8 @@ export const symptomQuery = {
         type: new GraphQLNonNull(GraphQLString),
       },
     },
-    resolve: function (root, params) {
-      const symptom = SymptomModel.findById(params.id).populate("patient").exec();
+    resolve: async function (root, params) {
+      const symptom = await SymptomModel.findById(params.id).populate("patient").exec();
       if (!symptom) {
         throw new Error("Symptom not found");
       }

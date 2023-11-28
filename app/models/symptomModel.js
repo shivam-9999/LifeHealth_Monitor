@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const SymptomSchema = new Schema({
   patient: {
     type: Schema.Types.ObjectId,
-    ref: "Patient",
+    ref: "PatientModel",
   },
   fever: {
     type: Boolean,

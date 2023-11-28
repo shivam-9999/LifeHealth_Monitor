@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
  const EmergencySchema = new Schema({
   patient: {
     type: Schema.Types.ObjectId,
-    ref: "Patient",
+    ref: "PatientModel",
   },
   concern: {
     type: String,

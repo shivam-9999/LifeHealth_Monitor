@@ -1,9 +1,9 @@
 ﻿// Load the module dependencies
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
-const saltRounds = 10;
 //Define a schema
 const Schema = mongoose.Schema;
+const saltRounds = 10;
 //
 // Define a new 'UserSchema'
 const PatientSchema = new Schema({
@@ -39,6 +39,7 @@ const PatientSchema = new Schema({
 // Set the 'fullname' virtual property
 PatientSchema.virtual("fullName")
   .get(function () {
+    
     return this.firstName + " " + this.lastName;
   })
   .set(function (fullName) {
