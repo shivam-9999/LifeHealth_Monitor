@@ -42,7 +42,7 @@ app.use(function (req, res, next) {
 });
 // production cors
 if (process.env.NODE_ENV === "production") {
-    app.use(cors( {origin: 'https://lifehealth-monitor-h8pk.onrender.com/',
+    app.use(cors( {origin: '*',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 204}));
