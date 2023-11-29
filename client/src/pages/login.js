@@ -78,7 +78,7 @@ const LoginPage = () => {
                         <InputGroup.Text>
                           <FontAwesomeIcon icon={faUnlockAlt} />
                         </InputGroup.Text>
-                        <Form.Control required type="password" name="password" placeholder="Password" disabled={loading} />
+                        <Form.Control required type="password" name="password" placeholder="Password" autocomplete="current-password" disabled={loading} />
                       </InputGroup>
                     </Form.Group>
                   </Form.Group>
