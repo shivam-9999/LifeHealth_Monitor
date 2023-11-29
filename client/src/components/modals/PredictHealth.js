@@ -42,11 +42,11 @@ const PredictHealth = ({
         respiratory_rate: respiratory_rate,
       }
     }).then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       setData(res.data);
       setLoading(false);
     }).catch((err) => {
-      console.log(err);
+      // console.log(err);
       setLoading(false);
     });
   }, [

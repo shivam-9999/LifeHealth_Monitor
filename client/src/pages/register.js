@@ -40,7 +40,7 @@ const RegistrationPage = () => {
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
 
-    console.log(data);
+    // console.log(data);
     
     setLoading(true);
     const res = await signup(isNurseRegistration ? 'nurse' : 'patient', data);

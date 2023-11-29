@@ -30,7 +30,7 @@ const SymptomsPage = () => {
   }, [refetch, patientId]);
 
     React.useEffect(() => {
-      console.log(data);
+      // console.log(data);
   }, [data]);
 
   if (!patientId) {

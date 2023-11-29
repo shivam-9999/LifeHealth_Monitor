@@ -20,7 +20,7 @@ import EditEmergencyAlert from "../modals/EditEmergencyAlert";
 
 
 const EmergenciesTable = ({ emergencies }) => {
-  console.log("emergencies",emergencies);
+  // console.log("emergencies",emergencies);
   const totalEmergencies = emergencies.length;
 
   const navigate = useNavigate();

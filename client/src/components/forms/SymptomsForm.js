@@ -24,7 +24,7 @@ const SymptomsForm = ({ onClose, data }) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-    console.log(data);
+    // console.log(data);
 
     if (data._id) {
       await editSymptoms({

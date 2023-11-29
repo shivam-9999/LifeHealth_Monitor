@@ -32,10 +32,9 @@ const LoginPage = () => {
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
 
-    console.log(data);
 
     const res = await login(data);
-    console.log(res);
+    // console.log(res);
     
     if (!res) {
       toast({

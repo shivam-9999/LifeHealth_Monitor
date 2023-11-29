@@ -33,7 +33,7 @@ const VitalsPage = () => {
   }, [refetch, patientId]);
 
   useEffect(()=>{
-    console.log(data);
+    // console.log(data);
   })
 
   if (!patientId) {
