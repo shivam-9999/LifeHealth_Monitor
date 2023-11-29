@@ -240,7 +240,7 @@ export const healthQuery = {
     
         // get the prediction results
         const results = model.predict(tf.tensor2d(testingData));
-        console.log('prediction results: ', results.dataSync());
+        // console.log('prediction results: ', results.dataSync());
         
         var dangerCount = 0;
         const array = results.arraySync();
@@ -250,7 +250,7 @@ export const healthQuery = {
           }
         });
     
-        console.log("dangerCount >> ", dangerCount);
+        // console.log("dangerCount >> ", dangerCount);
     
         var status;
         if (dangerCount > 1) {
