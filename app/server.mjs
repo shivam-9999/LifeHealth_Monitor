@@ -76,7 +76,7 @@ app.use(
     graphqlHTTP({
         schema: schema,
         rootValue: global,
-        graphiql:"https://lifehealth-monitor.onrender.com/",
+        graphiql:"true",
     })
 );
 // process.env.NODE_ENV === "development"
@@ -85,7 +85,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const buildPath = path.join(__dirname, './build');
 app.use(express.static(buildPath));
-
 
 // // Catch-all route for SPA
 app.get('*', (req, res) => {

@@ -4,7 +4,6 @@ import mongoose from 'mongoose';
 import config from './config.js';
 
 
-
 // Define the Mongoose configuration method
 const connectToDatabase = async () => {
   try {
