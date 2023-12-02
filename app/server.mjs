@@ -82,7 +82,7 @@ app.use(
 // process.env.NODE_ENV === "development"
 // Serve the build folder
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = path.dirname(__failename);
 const buildPath = path.join(__dirname, './build');
 app.use(express.static(buildPath));
 
