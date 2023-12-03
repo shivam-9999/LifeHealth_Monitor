@@ -5,10 +5,9 @@
       "use": "@vercel/node"
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ]
+  "env": {
+    "URI": "mongodb+srv://shivammaniya7469:K1tOqPckXNxEO4Wk@lifehealthdb.hnonjgw.mongodb.net/?retryWrites=true&w=majority",
+    "SESSIONSECRET": "sessionSecret",
+    "REALSECRET":"real_secret"
+  }
 }
