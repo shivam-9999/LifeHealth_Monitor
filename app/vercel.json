@@ -1,5 +1,4 @@
 {
     "builds": [{ "src": "/*.js,/*.mjs", "use":"@vercel/node" }],
-    "routes": [{"src":"/（・*）","dest":"/"}],
     "rewrites": [{"source":"/（・*）","destination":"/index.html"}]
 }
