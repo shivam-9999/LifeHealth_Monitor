@@ -79,14 +79,13 @@ app.use(
         graphiql:"true",
     })
 );
-// process.env.NODE_ENV === "development"
+process.env.NODE_ENV === "development"
 // Serve the build folder
-const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const buildPath = path.join(__dirname, './build');
 app.use(express.static(buildPath));
 
-// // Catch-all route for SPA
+// Catch-all route for SPA
 app.get('*', (req, res) => {
     res.sendFile(path.join(buildPath, 'index.html'));
 });
