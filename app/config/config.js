@@ -14,6 +14,7 @@ const developmentConfig = {
 
 const environments = {
   development: developmentConfig,
+
 };
 
 const config = environments[process.env.NODE_ENV || 'development'];
