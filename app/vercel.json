@@ -1,13 +1,4 @@
 {
-  "builds": [
-    {
-      "src": "/server.mjs",
-      "use": "@vercel/node"
-    }
-  ],
-  "env": {
-    "URI": "mongodb+srv://shivammaniya7469:K1tOqPckXNxEO4Wk@lifehealthdb.hnonjgw.mongodb.net/?retryWrites=true&w=majority",
-    "SESSIONSECRET": "sessionSecret",
-    "REALSECRET":"real_secret"
-  }
+    "builds": [{ "src": "/server.mjs", "use":"avercel/node" }],
+    "routes": [{"src":"/（・*）","dest":"/"}]
 }
