@@ -1,5 +1,6 @@
 import React,{lazy} from 'react';
-
+import { GET_ALL_NURSES } from '../graphql/nurse';
+import { useQuery } from '@apollo/client';
 
 /*
 Allow the nurse to enter vital signs:
@@ -7,8 +8,7 @@ body temperature, heart rate, blood
 pressure, or respiratory rate.
 */
 
-import { GET_ALL_NURSES } from '../graphql/nurse';
-import { useQuery } from '@apollo/client';
+
 const NursesTable = lazy(()=> import('../components/tables/NursesTable'));
 
 const NursesPage = () => {
