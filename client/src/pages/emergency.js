@@ -1,5 +1,5 @@
-import React, { lazy } from 'react';
-const EmergencyTable =lazy(() => import('../components/tables/EmergencyTable'));
+import React from 'react';
+import EmergencyTable from '../components/tables/EmergencyTable';
 
 import { useAuth } from '../hooks/useAuth';
 import { useParams, Navigate } from 'react-router-dom';
