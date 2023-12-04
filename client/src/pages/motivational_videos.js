@@ -6,13 +6,12 @@ tips to the patient (by storing them
   tips page for the patient to view, etc.).
 */
 
-import { GET_ALL_MOTIVATIONAL_VIDEOS } from '../graphql/motivationalVideos';
+
 import { useQuery } from '@apollo/client';
 import { Stack } from 'react-bootstrap';
-
-const NewMotivationalVideos = lazy(()=> import('../components/modals/NewMotivationalVideos'));
-
 import { useAuth } from '../hooks/useAuth';
+import { GET_ALL_MOTIVATIONAL_VIDEOS } from '../graphql/motivationalVideos';
+const NewMotivationalVideos = lazy(()=> import('../components/modals/NewMotivationalVideos'));
 const MotivationalVideoCard = lazy(()=> import('../components/MotivationalVideoCard'));
 
 const MotivationalVideosPage = () => {

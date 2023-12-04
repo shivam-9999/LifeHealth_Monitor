@@ -10,8 +10,6 @@ import { GET_ALL_TIPS } from '../graphql/tips';
 import { useQuery } from '@apollo/client';
 import TipCard from '../components/TipCard';
 import { Stack } from 'react-bootstrap';
-
-
 import { useAuth } from '../hooks/useAuth';
 const  NewTips =lazy(()=>import('../components/modals/NewTips'));
 
