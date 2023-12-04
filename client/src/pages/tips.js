@@ -11,7 +11,8 @@ import { useQuery } from '@apollo/client';
 import TipCard from '../components/TipCard';
 import { Stack } from 'react-bootstrap';
 import { useAuth } from '../hooks/useAuth';
-const  NewTips =lazy(()=>import('../components/modals/NewTips'));
+import NewTips from '../components/modals/NewTips';
+
 
 const TipsPage = () => {
   const { data } = useQuery(GET_ALL_TIPS);

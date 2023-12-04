@@ -8,7 +8,7 @@ pressure, or respiratory rate.
 
 import { GET_ALL_PATIENTS } from '../graphql/patient';
 import { useQuery } from '@apollo/client';
-const PatientsTable  = lazy(()=> import('../components/tables/PatientsTable'));
+import PatientsTable from '../components/tables/PatientsTable';
 
 const PatientsPage = () => {
   const { data } = useQuery(GET_ALL_PATIENTS);
