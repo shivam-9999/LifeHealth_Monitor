@@ -5,7 +5,6 @@
 // module.exports = require('./env/' + process.env.NODE_ENV + '.js');
 
 import { db, sessionSecret, secretKey } from './env/development.js';
-
 const developmentConfig = {
   db,
   sessionSecret,
