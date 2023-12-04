@@ -1,5 +1,5 @@
 import React,{lazy} from 'react';
-const EmergencyTable =lazy(()=>import('../components/tables/EmergencyTable'));
+
 
 import { useAuth } from '../hooks/useAuth';
 import { useParams, Navigate } from 'react-router-dom';
@@ -8,7 +8,7 @@ import NewEmergencyAlert from '../components/modals/NewEmergencyAlert';
 
 import { GET_EMERGENCIES_BY_PATIENT, GET_ALL_EMERGENCIES } from '../graphql/emergency';
 import apolloClient from '../utils/apollo';
-
+const EmergencyTable =lazy(()=>import('../components/tables/EmergencyTable'));
 
 const EmergencyPage = () => {
 

@@ -2,8 +2,6 @@ import React,{useEffect, lazy} from 'react';
 
 import { useAuth } from '../hooks/useAuth';
 import { useParams, Navigate } from 'react-router-dom';
-const VitalsTable = lazy(()=> import('../components/tables/VitalsTable'));
-
 /*
 Allow the patient to enter daily information
 as specified by the nurse practitioner
@@ -15,6 +13,8 @@ import { GET_VITALS_BY_PATIENT } from '../graphql/vitals';
 import { useQuery } from '@apollo/client';
 
 import NewVitalsReport from '../components/modals/NewVitalsReport';
+const VitalsTable = lazy(()=> import('../components/tables/VitalsTable'));
+
 
 const VitalsPage = () => {
   const { loggedInUser, role } = useAuth();
