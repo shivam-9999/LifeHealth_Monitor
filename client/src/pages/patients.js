@@ -1,5 +1,5 @@
-import React from 'react';
-import PatientsTable from '../components/tables/PatientsTable';
+import React,{lazy} from 'react';
+const PatientsTable  = lazy(()=> import('../components/tables/PatientsTable'));
 
 
 /*

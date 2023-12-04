@@ -1,9 +1,8 @@
-import React,{useEffect} from 'react';
+import React,{useEffect, lazy} from 'react';
 
 import { useAuth } from '../hooks/useAuth';
 import { useParams, Navigate } from 'react-router-dom';
-
-import VitalsTable from '../components/tables/VitalsTable';
+const VitalsTable = lazy(()=> import('../components/tables/VitalsTable'));
 
 /*
 Allow the patient to enter daily information

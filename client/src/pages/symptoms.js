@@ -1,9 +1,9 @@
-import React from 'react';
+import React,{lazy} from 'react';
 
 import { useAuth } from '../hooks/useAuth';
 import { useParams, Navigate } from 'react-router-dom';
 
-import SymptomsTable from '../components/tables/SymptomsTable';
+const SymptomsTable = lazy(()=> import('../components/tables/SymptomsTable'));
 
 import { GET_SYMPTOMS_BY_PATIENT } from '../graphql/symptoms';
 import { useQuery } from '@apollo/client';

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{lazy} from 'react';
 
 /*
 Allow the patient to send daily motivational
@@ -6,12 +6,11 @@ tips to the patient (by storing them
   in the database and providing a daily
   tips page for the patient to view, etc.).
 */
-
 import { GET_ALL_TIPS } from '../graphql/tips';
 import { useQuery } from '@apollo/client';
 import TipCard from '../components/TipCard';
 import { Stack } from 'react-bootstrap';
-import NewTips from '../components/modals/NewTips';
+const  NewTips =lazy(()=> '../components/modals/NewTips');
 
 import { useAuth } from '../hooks/useAuth';
 

@@ -1,5 +1,5 @@
-import React from 'react';
-import NursesTable from '../components/tables/NursesTable';
+import React,{lazy} from 'react';
+const NursesTable = lazy(()=> import('../components/tables/NursesTable'));
 
 /*
 Allow the nurse to enter vital signs:

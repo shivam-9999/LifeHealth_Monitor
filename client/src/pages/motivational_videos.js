@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React,{lazy} from 'react';
 /*
 Allow the patient to send daily motivational
 tips to the patient (by storing them
@@ -10,10 +9,11 @@ tips to the patient (by storing them
 import { GET_ALL_MOTIVATIONAL_VIDEOS } from '../graphql/motivationalVideos';
 import { useQuery } from '@apollo/client';
 import { Stack } from 'react-bootstrap';
-import NewMotivationalVideos from '../components/modals/NewMotivationalVideos';
+
+const NewMotivationalVideos = lazy(()=> import('../components/modals/NewMotivationalVideos'));
 
 import { useAuth } from '../hooks/useAuth';
-import MotivationalVideoCard from '../components/MotivationalVideoCard';
+const MotivationalVideoCard = lazy(()=> import('../components/MotivationalVideoCard'));
 
 const MotivationalVideosPage = () => {
   const { data } = useQuery(GET_ALL_MOTIVATIONAL_VIDEOS);
